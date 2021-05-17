@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="mapping.CourseopenEntity" table="COURSEOPEN" schema="public" catalog="StudentDB">
+        <composite-id mapped="true" class="mapping.CourseopenEntityPK">
+            <key-property name="startDay">
+                <column name="start_day" sql-type="date"/>
+            </key-property>
+            <key-property name="endDay">
+                <column name="end_day" sql-type="date"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

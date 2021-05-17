@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="mapping.CourseregisterEntity" table="COURSEREGISTER" schema="public" catalog="StudentDB">
+        <composite-id mapped="true" class="mapping.CourseregisterEntityPK">
+            <key-property name="courseId">
+                <column name="course_id" sql-type="varchar(10)" length="10"/>
+            </key-property>
+            <key-property name="registerDay">
+                <column name="register_day" sql-type="date"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

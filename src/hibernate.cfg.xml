@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/StudentDB</property>
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <mapping resource="ClazzEntity.hbm.xml"/>
+        <mapping class="mapping.ClazzEntity"/>
+        <mapping resource="CourseEntity.hbm.xml"/>
+        <mapping class="mapping.CourseEntity"/>
+        <mapping resource="CourseopenEntity.hbm.xml"/>
+        <mapping class="mapping.CourseopenEntity"/>
+        <mapping resource="CourseregisterEntity.hbm.xml"/>
+        <mapping class="mapping.CourseregisterEntity"/>
+        <mapping resource="LoginEntity.hbm.xml"/>
+        <mapping class="mapping.LoginEntity"/>
+        <mapping resource="SemesterEntity.hbm.xml"/>
+        <mapping class="mapping.SemesterEntity"/>
+        <mapping resource="StudentEntity.hbm.xml"/>
+        <mapping class="mapping.StudentEntity"/>
+        <mapping resource="SubjectEntity.hbm.xml"/>
+        <mapping class="mapping.SubjectEntity"/>
+        <mapping resource="TeacherEntity.hbm.xml"/>
+        <mapping class="mapping.TeacherEntity"/>
+        <!-- <property name="connection.username"/> -->
+        <!-- <property name="connection.password"/> -->
+
+        <!-- DB schema will be updated if needed -->
+        <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+    </session-factory>
+</hibernate-configuration>

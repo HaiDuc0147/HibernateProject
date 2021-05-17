@@ -13,14 +13,10 @@ public class test {
 
         try {
             //String sql = "select first_name from actor;";
-            String sql = "insert into \"SINHVIEN\" " + "values ('19120483', 'Thoi Hai Duc', '19CTT3', '23')";
+            String sql = "insert into \"STUDENT\" " + "values ('19120484', 'Thới Hải Đức', '19CTT3', 23)";
             cnt = DatabaseConnection.getConnection();
             stm = cnt.createStatement();
             stm.executeUpdate(sql);
-            /*while(res.next()){
-                listOfFirstName.add(res.getString("first_name"));
-            }*/
-            //System.out.println(res);
         }catch (SQLException e){
             System.out.println(e.getMessage());
         } finally {
@@ -42,11 +38,13 @@ public class test {
         ResultSet res = null;
         try{
             cnt = DatabaseConnection.getConnection();
-            String sql = "select * from \"SINHVIEN\" ";
+            String sql = "select * from \"STUDENT\" ";
             stm = cnt.createStatement();
             res = stm.executeQuery(sql);
             while(res.next()){
-                names.add(res.getString("TenSinhVien"));
+                //System.out.println(res.getString("student_name"));
+                names.add(res.getString("student_name"));
+                //System.out.println(res.getString("student_id"));
             }
         }catch (SQLException e) {
             e.printStackTrace();
@@ -57,21 +55,13 @@ public class test {
         }
     }
 
-    public static void main(String[] args) throws java.lang.NullPointerException{
-        //listOfFirstName = new ArrayList<>();
-        //getAllFirstName();
+    public static void main(String[] args) throws java.lang.NullPointerException, SQLException {
+        names = new ArrayList<>();
+        getData();
 
-        try {
-            names = new ArrayList<>();
-
-            getData();
-            for(String name: names)
-                System.out.println(name);
-        }catch(SQLException e){
-            e.printStackTrace();
+        //testInsert();
+        for(String name: names){
+            System.out.println(name);
         }
-        /*for(String firstname: listOfFirstName){
-            System.out.println(firstname);
-        }*/
     }
 }
